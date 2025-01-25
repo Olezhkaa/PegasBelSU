@@ -1,0 +1,46 @@
+﻿<Window x:Class="PegasProjectPlanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PegasProjectPlanner"
+        mc:Ignorable="d"
+        Title="PegasProjectPlaner" Height="550" Width="100" MinHeight="550" MinWidth="1000" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Name="topStackPanel" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Background="White" Orientation="Horizontal" >
+            <Image Source="Resources/pegas.png" HorizontalAlignment="Left" VerticalAlignment="Stretch" Stretch="Fill" />
+            <TextBlock VerticalAlignment="Center" FontSize="12">Система электронного обучения "Пегас"<LineBreak/>
+                       Белгородский государственный<LineBreak/>
+                       национальный исследовательский<LineBreak/>
+                       университет (НИУ "БелГУ")</TextBlock>
+            <Button Name="homeButton" Content="Домашняя страница" Click="onClickNavigationWithButton" VerticalAlignment="Center" Background="Transparent" FontSize="16" Padding="10" Margin="10, 0, 5, 0" BorderThickness="0"/>
+            <Button Name="personalAccountButton" Content="Личный кабинет" Click="onClickNavigationWithButton" VerticalAlignment="Center" Background="Transparent" FontSize="16" Padding="10" Margin="15, 0, 15, 0"  BorderThickness="0"/>
+        </StackPanel>
+        <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="MainFrame" NavigationUIVisibility="Hidden" Background="#F2F3F7" ContentRendered="MainFrame_ContentRendered"/>
+        <StackPanel Name="rightStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed" Grid.Row="1" Grid.Column="1" Background="#F8F9FA" >
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="10,55, 0, 0">Рабочая часть</TextBlock>
+            <Button Content="Курсы" Name="coursesButton" Click="onClickNavigationWithButton" Background="Transparent" BorderThickness="0" FontSize="16" Margin="10, 10, 0, 0" Foreground="Green" HorizontalContentAlignment="Left"/>
+            <Button Content="Отчетность" Name="reportsButton" Click="onClickNavigationWithButton" Background="Transparent" BorderThickness="0" FontSize="16" Margin="10, 10, 0, 0" Foreground="Green" HorizontalContentAlignment="Left"/>
+
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="10,25, 0, 0">Списки</TextBlock>
+            <Button Content="Преподаватели" Name="teatchersListButton" Click="onClickNavigationWithButton" Background="Transparent" BorderThickness="0" FontSize="16" Margin="10, 10, 0, 0" Foreground="Green" HorizontalContentAlignment="Left"/>
+            <Button Content="Обучающиеся" Name="studentsListButton" Click="onClickNavigationWithButton" Background="Transparent" BorderThickness="0" FontSize="16" Margin="10, 10, 0, 0" Foreground="Green" HorizontalContentAlignment="Left"/>
+
+            <TextBlock FontSize="18" FontWeight="Bold" Margin="10,25, 0, 0">Настройки</TextBlock>
+            <Button Content="Выйти из аккаунта" Name="logOutButton" Click="logOutButton_Click" Background="Transparent" BorderThickness="0" FontSize="16" Margin="10, 10, 0, 0" Foreground="Green" HorizontalContentAlignment="Left"/>
+        </StackPanel>
+        <Button Grid.Column="1" Name="rightPanelButton" Width="32" Height="32" FontSize="16" VerticalAlignment="Top" Margin="0, 10, 0 ,0" HorizontalAlignment="Right" Click="rightPanelButton_Click" Grid.Row="1" Background="Green" Foreground="White" BorderThickness="0" FontWeight="Bold">&lt;</Button>
+        <Button Name="backButton" Content="Назад" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Background="Green" Foreground="White" Margin="0, 0, 10, 0" Padding="10, 2, 10, 2" FontSize="14" Click="backButton_Click"/>
+
+    </Grid>
+
+
+</Window>

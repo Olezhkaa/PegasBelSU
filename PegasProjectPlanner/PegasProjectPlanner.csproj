@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D250D23F-B1F6-4308-99A4-CB08EF3559FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PegasProjectPlanner</RootNamespace>
+    <AssemblyName>PegasProjectPlanner</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pegas.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddChangeTask.xaml.cs">
+      <DependentUpon>AddChangeTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AnswerTasks.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConcreteTaskPage.xaml.cs">
+      <DependentUpon>ConcreteTaskPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CourseReportsPage.xaml.cs">
+      <DependentUpon>CourseReportsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Courses.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoursesGroups.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CoursesPage.xaml.cs">
+      <DependentUpon>CoursesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CoursesReports.cs" />
+    <Compile Include="Department.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupsStudents.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Students.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentsListPage.xaml.cs">
+      <DependentUpon>StudentsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tasks.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TasksGroups.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TasksPage.xaml.cs">
+      <DependentUpon>TasksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Teatchers.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeatchersListPage.xaml.cs">
+      <DependentUpon>TeatchersListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddChangeTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConcreteTaskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CourseReportsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CoursesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PersonalAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TasksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeatchersListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PersonalAccountPage.xaml.cs">
+      <DependentUpon>PersonalAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="ModelDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelDB.edmx.diagram">
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\pegas.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pegas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDB.edmx</DependentUpon>
+      <LastGenOutput>ModelDB.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resources\profile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\task.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\login_image_belsu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
